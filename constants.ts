@@ -1,0 +1,92 @@
+
+import { Lesson, QuestionType } from './types';
+
+export const LESSONS: Lesson[] = [
+  {
+    id: 'lesson-1',
+    title: '第一課：選班長',
+    description: '🍭 學習 uei / uen 韻母辨析與拼寫規則 🍬',
+    questions: [
+      { id: 101, type: QuestionType.MC, context: '「水準」🌊', prompt: '「水」的原韻母是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'ui'}, {id: 'C', text: 'uen'}], correctAnswer: 'A' },
+      { id: 102, type: QuestionType.MC, context: '「嘴唇」👄', prompt: '「唇」的韻母是？', options: [{id: 'A', text: 'un'}, {id: 'B', text: 'uen'}, {id: 'C', text: 'uei'}], correctAnswer: 'B' },
+      { id: 103, type: QuestionType.MC, context: '「退婚」💍', prompt: '「退」的原韻母是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'ui'}, {id: 'C', text: 'uei'}], correctAnswer: 'C' },
+      { id: 104, type: QuestionType.MC, context: '「選舉」🗳️', prompt: '「舉」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 105, type: QuestionType.MC, context: '「辦事」💼', prompt: '「事」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 106, type: QuestionType.MC, context: '「熱心」❤️', prompt: '「心」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 107, type: QuestionType.MC, context: '「能力」💪', prompt: '「力」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 108, type: QuestionType.MC, context: '「能幹」🔥', prompt: '「幹」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 109, type: QuestionType.MC, context: '「長處」🌟', prompt: '「處」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 110, type: QuestionType.MC, context: '「競選」🏁', prompt: '「選」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 111, type: QuestionType.MC, context: '「不敢當」🙏', prompt: '「敢」的韻母類別是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uen'}, {id: 'C', text: '非 uei/uen 類'}], correctAnswer: 'C' },
+      { id: 112, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uei」與聲母「sh」相拼，正確寫法是？', options: [{id: 'A', text: 'shui'}, {id: 'B', text: 'shei'}, {id: 'C', text: 'shuei'}], correctAnswer: 'A' },
+      { id: 113, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uen」與聲母「zh」相拼，正確寫法是？', options: [{id: 'A', text: 'zhun'}, {id: 'B', text: 'zhen'}, {id: 'C', text: 'zhuen'}], correctAnswer: 'A' },
+      { id: 114, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uen」與聲母「ch」相拼，正確寫法是？', options: [{id: 'A', text: 'chun'}, {id: 'B', text: 'chen'}, {id: 'C', text: 'chuen'}], correctAnswer: 'A' },
+      { id: 115, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uei」與聲母「t」相拼，正確寫法是？', options: [{id: 'A', text: 'tui'}, {id: 'B', text: 'tei'}, {id: 'C', text: 'tuei'}], correctAnswer: 'A' },
+      { id: 116, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uen」與聲母「s」相拼，正確寫法是？', options: [{id: 'A', text: 'sun'}, {id: 'B', text: 'sen'}, {id: 'C', text: 'suen'}], correctAnswer: 'A' },
+      { id: 117, type: QuestionType.MC, context: '「累」😫', prompt: 'l + uei (第三聲) 的正確拼法是？', options: [{id: 'A', text: 'lěi'}, {id: 'B', text: 'luǐ'}, {id: 'C', text: 'lǔi'}], correctAnswer: 'A' },
+      { id: 118, type: QuestionType.MC, context: '「純」🍼', prompt: 'ch + uen (第二聲) 的正確拼法是？', options: [{id: 'A', text: 'chún'}, {id: 'B', text: 'chén'}, {id: 'C', text: 'chuán'}], correctAnswer: 'A' },
+      { id: 119, type: QuestionType.MC, context: '「退」🔙', prompt: 't + uei (第四聲) 的正確拼法是？', options: [{id: 'A', text: 'tuì'}, {id: 'B', text: 'tè'}, {id: 'C', text: 'tù'}], correctAnswer: 'A' },
+      { id: 120, type: QuestionType.MC, context: '「準」🎯', prompt: 'zh + uen (第三聲) 的正確拼法是？', options: [{id: 'A', text: 'zhǔn'}, {id: 'B', text: 'zhěn'}, {id: 'C', text: 'zhǔen'}], correctAnswer: 'A' },
+    ]
+  },
+  {
+    id: 'lesson-2',
+    title: '第二課：跨學科學習日',
+    description: '🍓 掌握 uai / uei 辨析與對應詞彙 🍰',
+    questions: [
+      { id: 201, type: QuestionType.MC, context: '「外來」👽', prompt: '「外」的韻母是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: 'ai'}], correctAnswer: 'A' },
+      { id: 202, type: QuestionType.MC, context: '「未來」🚀', prompt: '「未」的韻母是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: 'ei'}], correctAnswer: 'B' },
+      { id: 203, type: QuestionType.MC, context: '「怪人」🕵️', prompt: '「怪」的韻母是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: 'ui'}], correctAnswer: 'A' },
+      { id: 204, type: QuestionType.MC, context: '「貴人」👑', prompt: '「貴」的韻母是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: 'ui'}], correctAnswer: 'B' },
+      { id: 205, type: QuestionType.MC, context: '「懷抱」🤗', prompt: '「懷」的韻母是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uai'}, {id: 'C', text: 'ai'}], correctAnswer: 'B' },
+      { id: 206, type: QuestionType.MC, context: '「回報」💰', prompt: '「回」的韻母是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uai'}, {id: 'C', text: 'ui'}], correctAnswer: 'A' },
+      { id: 207, type: QuestionType.MC, context: '「不快」😤', prompt: '「快」的韻母是？', options: [{id: 'A', text: 'uei'}, {id: 'B', text: 'uai'}, {id: 'C', text: 'ai'}], correctAnswer: 'B' },
+      { id: 208, type: QuestionType.MC, context: '「不愧」✨', prompt: '「愧」的韻母是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: 'ei'}], correctAnswer: 'B' },
+      { id: 209, type: QuestionType.MC, context: '拼音找詞 🎯', prompt: '「guài zuì」對應哪一個詞？', options: [{id: 'A', text: '怪罪'}, {id: 'B', text: '快慰'}, {id: 'C', text: '毀壞'}], correctAnswer: 'A' },
+      { id: 210, type: QuestionType.MC, context: '拼音找詞 🎯', prompt: '「kuài wèi」對應哪一個詞？', options: [{id: 'A', text: '怪罪'}, {id: 'B', text: '快慰'}, {id: 'C', text: '毀壞'}], correctAnswer: 'B' },
+      { id: 211, type: QuestionType.MC, context: '拼音找詞 🎯', prompt: '「huǐ huài」對應哪一個詞？', options: [{id: 'A', text: '怪罪'}, {id: 'B', text: '快慰'}, {id: 'C', text: '毀壞'}], correctAnswer: 'C' },
+      { id: 212, type: QuestionType.MC, context: '「跨學科」🏫', prompt: '「學」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+      { id: 213, type: QuestionType.MC, context: '「食譜」🍲', prompt: '「譜」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+      { id: 214, type: QuestionType.MC, context: '「匯報」📊', prompt: '「匯」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'B' },
+      { id: 215, type: QuestionType.MC, context: '「專題」📖', prompt: '「題」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+      { id: 216, type: QuestionType.MC, context: '「攤位」🎪', prompt: '「位」的韻母類別是？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: 'ei'}], correctAnswer: 'B' },
+      { id: 217, type: QuestionType.MC, context: '「得意」😊', prompt: '「意」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+      { id: 218, type: QuestionType.MC, context: '「籌辦」🤝', prompt: '「辦」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+      { id: 219, type: QuestionType.MC, context: '「挑戰」🏹', prompt: '「戰」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+      { id: 220, type: QuestionType.MC, context: '「贏得」🏆', prompt: '「得」的韻母屬於？', options: [{id: 'A', text: 'uai'}, {id: 'B', text: 'uei'}, {id: 'C', text: '非兩類'}], correctAnswer: 'C' },
+    ]
+  },
+  {
+    id: 'lesson-3',
+    title: '第三課：燒烤樂',
+    description: '🍖 熟練 uan, uen, uang 的組合與應用 🌭',
+    questions: [
+      { id: 301, type: QuestionType.MC, context: '「萬」🔢', prompt: '「萬」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'A' },
+      { id: 302, type: QuestionType.MC, context: '「一萬」💰', prompt: '「萬」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'A' },
+      { id: 303, type: QuestionType.MC, context: '「船」⛵', prompt: '「船」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'A' },
+      { id: 304, type: QuestionType.MC, context: '「船邊」⚓', prompt: '「船」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'A' },
+      { id: 305, type: QuestionType.MC, context: '「問」❓', prompt: '「問」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uen'}, {id: 'C', text: 'uang'}], correctAnswer: 'B' },
+      { id: 306, type: QuestionType.MC, context: '「疑問」🤔', prompt: '「問」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uen'}, {id: 'C', text: 'uang'}], correctAnswer: 'B' },
+      { id: 307, type: QuestionType.MC, context: '「唇」👄', prompt: '「唇」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uen'}, {id: 'C', text: 'uang'}], correctAnswer: 'B' },
+      { id: 308, type: QuestionType.MC, context: '「唇邊」💄', prompt: '「唇」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uen'}, {id: 'C', text: 'uang'}], correctAnswer: 'B' },
+      { id: 309, type: QuestionType.MC, context: '「忘」🧠', prompt: '「忘」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'B' },
+      { id: 310, type: QuestionType.MC, context: '「遺忘」🕯️', prompt: '「忘」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'B' },
+      { id: 311, type: QuestionType.MC, context: '「床」🛌', prompt: '「床」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'B' },
+      { id: 312, type: QuestionType.MC, context: '「床邊」🏠', prompt: '「床」的韻母是？', options: [{id: 'A', text: 'uan'}, {id: 'B', text: 'uang'}, {id: 'C', text: 'uen'}], correctAnswer: 'B' },
+      { id: 313, type: QuestionType.MC, context: '拼音辨析 🍲', prompt: '「端著」的正確拼法是？', options: [{id: 'A', text: 'duān zhe'}, {id: 'B', text: 'dūn zhe'}], correctAnswer: 'A' },
+      { id: 314, type: QuestionType.MC, context: '拼音辨析 🧘', prompt: '「蹲著」的正確拼法是？', options: [{id: 'A', text: 'duān zhe'}, {id: 'B', text: 'dūn zhe'}], correctAnswer: 'B' },
+      { id: 315, type: QuestionType.MC, context: '拼音辨析 🏢', prompt: '「專員」的正確拼法是？', options: [{id: 'A', text: 'zhuān yuán'}, {id: 'B', text: 'zhuāng yuán'}], correctAnswer: 'A' },
+      { id: 316, type: QuestionType.MC, context: '拼音辨析 🏰', prompt: '「莊園」的正確拼法是？', options: [{id: 'A', text: 'zhuān yuán'}, {id: 'B', text: 'zhuāng yuán'}], correctAnswer: 'B' },
+      { id: 317, type: QuestionType.MC, context: '拼音找詞 🌟', prompt: '「guāng huán」對應哪一個詞？', options: [{id: 'A', text: '光環'}, {id: 'B', text: '黃昏'}, {id: 'C', text: '溫暖'}], correctAnswer: 'A' },
+      { id: 318, type: QuestionType.MC, context: '拼音找詞 🌇', prompt: '「huáng hūn」對應哪一個詞？', options: [{id: 'A', text: '光環'}, {id: 'B', text: '黃昏'}, {id: 'C', text: '溫暖'}], correctAnswer: 'B' },
+      { id: 319, type: QuestionType.MC, context: '拼音找詞 🧶', prompt: '「wēn nuǎn」對應哪一個詞？', options: [{id: 'A', text: '光環'}, {id: 'B', text: '黃昏'}, {id: 'C', text: '溫暖'}], correctAnswer: 'C' },
+      { id: 320, type: QuestionType.MC, context: '音節補全 🚢', prompt: '「船邊」中「邊」的正確拼音是？', options: [{id: 'A', text: 'biān'}, {id: 'B', text: 'biāng'}, {id: 'C', text: 'bān'}], correctAnswer: 'A' },
+    ]
+  },
+  {
+    id: 'bonus',
+    title: 'bonus超級混合',
+    description: '🎉 混合第一至三課內容，隨機 20 題終極挑戰！全選擇題型！ 🏆',
+    questions: []
+  }
+];

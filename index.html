@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五下拼音練習</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --candy-pink: #FF85A1;
+            --candy-blue: #A0E7FF;
+            --candy-yellow: #FFD93D;
+            --candy-mint: #6BCB77;
+            --text-main: #4D2D52;
+        }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: #FFF9FA;
+            background-image: 
+                radial-gradient(circle at 20% 20%, #FFE5E9 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, #E5F6FF 0%, transparent 40%);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+        
+        .candy-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 40px;
+            border: 8px solid #FFFFFF;
+            box-shadow: 0 20px 40px rgba(255, 133, 161, 0.1);
+        }
+
+        .btn-candy-pop {
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 20px;
+            box-shadow: 0 6px 0 rgba(0,0,0,0.1);
+        }
+        .btn-candy-pop:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.05);
+            box-shadow: 0 10px 0 rgba(0,0,0,0.1);
+        }
+        .btn-candy-pop:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+        }
+
+        .floating-item {
+            animation: float-anim 5s ease-in-out infinite;
+        }
+        @keyframes float-anim {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .shake-incorrect {
+            animation: shake 0.4s ease-in-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+
+        .progress-candy {
+            height: 14px;
+            background: #F0F0F0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #FFF;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FF85A1, #FFB7C5);
+            transition: width 0.4s ease;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
