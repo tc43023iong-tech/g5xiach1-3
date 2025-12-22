@@ -23,10 +23,10 @@ export const LESSONS: Lesson[] = [
       { id: 114, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uen」與聲母「ch」相拼，正確寫法是？', options: [{id: 'A', text: 'chun'}, {id: 'B', text: 'chen'}, {id: 'C', text: 'chuen'}], correctAnswer: 'A' },
       { id: 115, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uei」與聲母「t」相拼，正確寫法是？', options: [{id: 'A', text: 'tui'}, {id: 'B', text: 'tei'}, {id: 'C', text: 'tuei'}], correctAnswer: 'A' },
       { id: 116, type: QuestionType.MC, context: '拼寫規則 📏', prompt: '「uen」與聲母「s」相拼，正確寫法是？', options: [{id: 'A', text: 'sun'}, {id: 'B', text: 'sen'}, {id: 'C', text: 'suen'}], correctAnswer: 'A' },
-      { id: 117, type: QuestionType.MC, context: '「累」😫', prompt: 'l + uei (第三聲) 的正確拼法是？', options: [{id: 'A', text: 'lěi'}, {id: 'B', text: 'luǐ'}, {id: 'C', text: 'lǔi'}], correctAnswer: 'A' },
-      { id: 118, type: QuestionType.MC, context: '「純」🍼', prompt: 'ch + uen (第二聲) 的正確拼法是？', options: [{id: 'A', text: 'chún'}, {id: 'B', text: 'chén'}, {id: 'C', text: 'chuán'}], correctAnswer: 'A' },
-      { id: 119, type: QuestionType.MC, context: '「退」🔙', prompt: 't + uei (第四聲) 的正確拼法是？', options: [{id: 'A', text: 'tuì'}, {id: 'B', text: 'tè'}, {id: 'C', text: 'tù'}], correctAnswer: 'A' },
-      { id: 120, type: QuestionType.MC, context: '「準」🎯', prompt: 'zh + uen (第三聲) 的正確拼法是？', options: [{id: 'A', text: 'zhǔn'}, {id: 'B', text: 'zhěn'}, {id: 'C', text: 'zhǔen'}], correctAnswer: 'A' },
+      { id: 117, type: QuestionType.MC, context: '「累」😫', prompt: '「累」的正確拼音是？', options: [{id: 'A', text: 'lěi'}, {id: 'B', text: 'luǐ'}, {id: 'C', text: 'lǔi'}], correctAnswer: 'A' },
+      { id: 118, type: QuestionType.MC, context: '「純」🍼', prompt: '「純」的正確拼音是？', options: [{id: 'A', text: 'chún'}, {id: 'B', text: 'chén'}, {id: 'C', text: 'chuán'}], correctAnswer: 'A' },
+      { id: 119, type: QuestionType.MC, context: '「退」🔙', prompt: '「退」的正確拼音是？', options: [{id: 'A', text: 'tuì'}, {id: 'B', text: 'tè'}, {id: 'C', text: 'tù'}], correctAnswer: 'A' },
+      { id: 120, type: QuestionType.MC, context: '「準」🎯', prompt: '「準」的正確拼音是？', options: [{id: 'A', text: 'zhǔn'}, {id: 'B', text: 'zhěn'}, {id: 'C', text: 'zhǔen'}], correctAnswer: 'A' },
     ]
   },
   {

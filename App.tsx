@@ -23,6 +23,24 @@ const CandyFloatingElements = () => (
     <div className="absolute top-[15%] right-[10%] floating-item text-blue-400" style={{animationDelay: '1s'}}><IceCream size={70} /></div>
     <div className="absolute bottom-[20%] left-[8%] floating-item text-yellow-400" style={{animationDelay: '2s'}}><Star size={90} /></div>
     <div className="absolute bottom-[10%] right-[12%] floating-item text-green-400" style={{animationDelay: '1.5s'}}><Zap size={70} /></div>
+    
+    {/* 吃糖果的小動物們 */}
+    <div className="absolute top-[40%] left-[2%] floating-item flex flex-col items-center">
+      <span className="text-5xl">🐰</span>
+      <span className="text-2xl -mt-2">🍬</span>
+    </div>
+    <div className="absolute top-[60%] right-[4%] floating-item flex flex-col items-center" style={{animationDelay: '2.5s'}}>
+      <span className="text-5xl">🐱</span>
+      <span className="text-2xl -mt-2">🍭</span>
+    </div>
+    <div className="absolute bottom-[5%] left-[20%] floating-item flex flex-col items-center" style={{animationDelay: '3.5s'}}>
+      <span className="text-6xl">🐈</span>
+      <span className="text-3xl -mt-3">🍬</span>
+    </div>
+    <div className="absolute top-[5%] right-[25%] floating-item flex flex-col items-center" style={{animationDelay: '0.5s'}}>
+      <span className="text-6xl">🐇</span>
+      <span className="text-3xl -mt-3">🍫</span>
+    </div>
   </div>
 );
 
@@ -40,7 +58,7 @@ export default function App() {
     const bonusIndex = lessons.findIndex((l: Lesson) => l.id === 'bonus');
     if (bonusIndex !== -1) {
       const pool = LESSONS.slice(0, 3).flatMap(l => l.questions);
-      // Filter only MC questions for Bonus just in case, or trust the updated constants
+      // 確保 Bonus 均為 MC 選擇題型且為 20 題
       const mcPool = pool.filter(q => q.type === QuestionType.MC);
       const shuffled = [...mcPool].sort(() => 0.5 - Math.random()).slice(0, 20);
       lessons[bonusIndex].questions = shuffled;
@@ -101,7 +119,7 @@ export default function App() {
               <h1 className="text-4xl md:text-6xl font-[900] text-pink-600 mb-4 tracking-tighter">
                 五下第一～三課
               </h1>
-              <p className="text-lg md:text-xl font-bold text-pink-400 opacity-90">🍭 拼音糖果商店：糖果小學堂 🍬</p>
+              <p className="text-lg md:text-xl font-bold text-pink-400 opacity-90">🍬 拼音糖果商店：糖果小學堂 🍬</p>
             </header>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -117,12 +135,12 @@ export default function App() {
                   `}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="bg-white/30 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Lesson 0{idx + 1}</span>
+                    <span className="bg-white/30 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Flavour 0{idx + 1}</span>
                   </div>
                   <h3 className="text-2xl font-black mb-3">{lesson.title}</h3>
                   <p className="font-bold opacity-90 text-sm leading-relaxed mb-6">{lesson.description}</p>
                   <div className="mt-auto flex items-center justify-between font-black">
-                    <span className="text-sm">開始練習挑戰</span>
+                    <span className="text-sm">開始練習 🐰</span>
                     <ChevronRight size={24} strokeWidth={3} className="group-hover:translate-x-2 transition-transform" />
                   </div>
                 </button>
@@ -131,9 +149,9 @@ export default function App() {
 
             <footer className="mt-12 text-center text-pink-300 font-bold flex items-center justify-center gap-4">
                <div className="h-[2px] flex-1 bg-pink-100"></div>
-               <Sparkles size={20} />
+               <span className="text-2xl">🐱</span>
                <span className="text-sm md:text-base uppercase tracking-widest font-black">Happy Learning</span>
-               <Sparkles size={20} />
+               <span className="text-2xl">🐰</span>
                <div className="h-[2px] flex-1 bg-pink-100"></div>
             </footer>
           </div>
@@ -146,7 +164,7 @@ export default function App() {
                 onClick={resetToMenu}
                 className="btn-candy-pop bg-white px-5 py-2.5 text-pink-500 font-black flex items-center gap-2 border-2 border-pink-200"
               >
-                <Home size={20} /> <span className="hidden md:inline">離開</span>
+                <Home size={20} /> <span className="hidden md:inline">離開 🐱</span>
               </button>
               
               <div className="text-center flex-1 mx-4">
@@ -177,67 +195,45 @@ export default function App() {
               </div>
 
               <div className="space-y-4 mb-10">
-                {activeLesson.questions[currentQuestionIndex].type === QuestionType.MC ? (
-                  <div className="grid grid-cols-1 gap-4">
-                    {activeLesson.questions[currentQuestionIndex].options?.map((option) => (
-                      <button
-                        key={option.id}
-                        onClick={() => handleAnswer(option.id)}
-                        disabled={showFeedback}
-                        className={`w-full p-6 text-left rounded-[25px] border-4 transition-all text-xl font-black flex justify-between items-center btn-candy-pop
-                          ${showFeedback 
-                            ? option.id === activeLesson.questions[currentQuestionIndex].correctAnswer 
-                              ? 'bg-green-500 border-green-600 text-white shadow-lg' 
-                              : userAnswer === option.id 
-                                ? 'bg-red-500 border-red-600 text-white shake-incorrect' 
-                                : 'opacity-20 border-gray-200'
-                            : 'bg-white border-pink-100 hover:border-pink-300 text-[#4D2D52] shadow-sm'
-                          }`}
-                      >
-                        <span className="flex items-center gap-5">
-                          <span className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-black shadow-sm
-                            ${showFeedback && option.id === activeLesson.questions[currentQuestionIndex].correctAnswer ? 'bg-white text-green-500' : 'bg-pink-100 text-pink-500'}`}>
-                            {option.id}
-                          </span> 
-                          {option.text}
-                        </span>
-                        {showFeedback && option.id === activeLesson.questions[currentQuestionIndex].correctAnswer && <CheckCircle2 className="text-white" size={28} />}
-                        {showFeedback && userAnswer === option.id && option.id !== activeLesson.questions[currentQuestionIndex].correctAnswer && <XCircle className="text-white" size={28} />}
-                      </button>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <input
-                      type="text"
-                      value={userAnswer}
-                      onChange={(e) => setUserAnswer(e.target.value)}
+                <div className="grid grid-cols-1 gap-4">
+                  {activeLesson.questions[currentQuestionIndex].options?.map((option) => (
+                    <button
+                      key={option.id}
+                      onClick={() => handleAnswer(option.id)}
                       disabled={showFeedback}
-                      placeholder="於此輸入拼音答案..."
-                      className="flex-grow p-6 bg-white border-4 border-pink-100 rounded-[25px] focus:outline-none focus:border-pink-400 text-2xl font-black text-pink-600 text-center shadow-inner placeholder:text-pink-200"
-                      onKeyDown={(e) => e.key === 'Enter' && handleAnswer(userAnswer)}
-                    />
-                    {!showFeedback && (
-                      <button 
-                        onClick={() => handleAnswer(userAnswer)}
-                        className="btn-candy-pop px-10 py-6 bg-pink-500 text-white font-black text-xl shadow-md border-b-6 border-pink-700"
-                      >
-                        確定
-                      </button>
-                    )}
-                  </div>
-                )}
+                      className={`w-full p-6 text-left rounded-[25px] border-4 transition-all text-xl font-black flex justify-between items-center btn-candy-pop
+                        ${showFeedback 
+                          ? option.id === activeLesson.questions[currentQuestionIndex].correctAnswer 
+                            ? 'bg-green-500 border-green-600 text-white shadow-lg' 
+                            : userAnswer === option.id 
+                              ? 'bg-red-500 border-red-600 text-white shake-incorrect' 
+                              : 'opacity-20 border-gray-200'
+                          : 'bg-white border-pink-100 hover:border-pink-300 text-[#4D2D52] shadow-sm'
+                        }`}
+                    >
+                      <span className="flex items-center gap-5">
+                        <span className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-black shadow-sm
+                          ${showFeedback && option.id === activeLesson.questions[currentQuestionIndex].correctAnswer ? 'bg-white text-green-500' : 'bg-pink-100 text-pink-500'}`}>
+                          {option.id}
+                        </span> 
+                        {option.text}
+                      </span>
+                      {showFeedback && option.id === activeLesson.questions[currentQuestionIndex].correctAnswer && <CheckCircle2 className="text-white" size={28} />}
+                      {showFeedback && userAnswer === option.id && option.id !== activeLesson.questions[currentQuestionIndex].correctAnswer && <XCircle className="text-white" size={28} />}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {showFeedback && (
                 <div className={`p-8 rounded-[35px] mb-4 border-4 animate-in pop-in shadow-xl ${isLastAnswerCorrect ? 'bg-green-50 border-green-200 text-green-900' : 'bg-red-50 border-red-200 text-red-900'}`}>
                   <div className="flex items-center gap-6">
                     <div className="shrink-0 scale-125">
-                      {isLastAnswerCorrect ? <PartyPopper className="text-green-500" /> : <IceCream className="text-red-400" />}
+                      {isLastAnswerCorrect ? <span className="text-4xl">🐰</span> : <span className="text-4xl">😿</span>}
                     </div>
                     <div className="flex-grow">
                       <p className="text-2xl font-black">
-                        {isLastAnswerCorrect ? '答對了！你太厲害了！🍭' : `差一點點！正確答案是：${activeLesson.questions[currentQuestionIndex].correctAnswer}`}
+                        {isLastAnswerCorrect ? '答對了！你太厲害了！🍭' : `味道不太對喔～正確答案：${activeLesson.questions[currentQuestionIndex].correctAnswer}`}
                       </p>
                     </div>
                     {!isLastAnswerCorrect && (
@@ -245,7 +241,7 @@ export default function App() {
                         onClick={nextQuestion}
                         className="btn-candy-pop bg-pink-500 text-white px-8 py-4 font-black shadow-lg"
                       >
-                        下一關
+                        下一關 🐱
                       </button>
                     )}
                   </div>
@@ -258,10 +254,12 @@ export default function App() {
         {state === AppState.SUMMARY && activeLesson && (
           <div className="candy-container p-12 md:p-20 text-center animate-in pop-in">
             <div className="relative z-10">
-              <div className="flex justify-center mb-10">
-                <div className="w-28 h-28 bg-yellow-400 rounded-full border-8 border-white shadow-2xl flex items-center justify-center floating-item">
+              <div className="flex justify-center mb-10 gap-4">
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-5xl floating-item">🐰</div>
+                <div className="w-28 h-28 bg-yellow-400 rounded-full border-8 border-white shadow-2xl flex items-center justify-center">
                   <Trophy size={56} className="text-white" />
                 </div>
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-5xl floating-item" style={{animationDelay: '1.2s'}}>🐱</div>
               </div>
               
               <h2 className="text-5xl md:text-7xl font-black text-pink-600 mb-6 tracking-tighter">挑戰成功！</h2>
@@ -280,7 +278,7 @@ export default function App() {
                   <span className="text-2xl text-pink-300 font-black ml-2 uppercase">Score</span>
                 </div>
                 <p className="text-2xl font-black text-[#4D2D52] bg-pink-50/50 px-8 py-3 rounded-full border border-pink-100">
-                  共獲得 {score} 顆拼音糖果 🍭
+                  小動物們很高興！獲得了 {score} 顆糖果 🍭
                 </p>
               </div>
 
@@ -295,7 +293,7 @@ export default function App() {
                   onClick={resetToMenu}
                   className="btn-candy-pop flex items-center justify-center gap-3 px-12 py-6 bg-pink-500 text-white font-black text-2xl shadow-lg border-b-8 border-pink-700"
                 >
-                  <Home size={24} /> 回商店街
+                  <Home size={24} /> 回商店街 🐰
                 </button>
               </div>
             </div>
